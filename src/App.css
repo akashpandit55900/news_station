@@ -1,0 +1,35 @@
+.navbar-shadowEffect {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+.navbar-nav .nav-link {
+    color: black;
+    padding: 10px;
+    transition: background-color 0.3s, color 0.3s, border-radius 0.3s;
+}
+
+.navbar-nav .nav-link:hover{
+    color: red;
+    text-decoration: underline;
+}
+.navbar-nav .nav-link.active {
+    color: red;
+    background-color: #ffcccc;
+    border-radius: 20px;
+}
+
+.navbar-nav .nav-link.active {
+    font-weight: bold;
+}
+
+.btn-select:hover{
+    color: #ffffff;
+    background-color:red;
+    font-weight: bold;
+}
+.btn-d{
+    color: red;
+    background-color: #ffcccc;
+    font-weight: bold;
+    border: 1px solid red;
+}

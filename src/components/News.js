@@ -23,7 +23,7 @@ const News = (props) => {
   const updateNews = async () => {
     props.setProgress(10);
     setLoading(true);
-    let ModifiedUrl = `${url}country=${props.country}&category=${props.category}&apiKey=${props.apiKey1}&page=${page}&pageSize=${props.pageSize}`; // meriAPI
+    let ModifiedUrl = `${url}country=${props.country}&category=${props.category}&apiKey=${props.apiKey2}&page=${page}&pageSize=${props.pageSize}`; // meriAPI
     
     let data = await fetch(ModifiedUrl);
     props.setProgress(30);
@@ -37,14 +37,14 @@ const News = (props) => {
   
   //in place of componentDidMount
   useEffect(() => {
-    document.title = `${capitalizeFirstLetter(props.category)} - NewsMonkey`;
+    document.title = `${capitalizeFirstLetter(props.category)} - News Station`;
     updateNews();
     // eslint-disable-next-line
   }, []);
 
 
   const fetchMoreData = async () => {
-    let ModifiedUrl = `${url}country=${props.country}&category=${props.category}&apiKey=${props.apiKey1}&page=${page+1}&pageSize=${props.pageSize}`; // meriAPI
+    let ModifiedUrl = `${url}country=${props.country}&category=${props.category}&apiKey=${props.apiKey2}&page=${page+1}&pageSize=${props.pageSize}`; // meriAPI
     setPage(page + 1);
     let data = await fetch(ModifiedUrl);
     let parsedData = await data.json();
@@ -57,7 +57,7 @@ const News = (props) => {
 
   return (
     <>
-      <h1 className='text-center' style={{ margin: "35px", marginTop: "90px" }}>NewsMonkey - Top {capitalizeFirstLetter(props.category)} Headlines</h1>
+      <h1 className='text-center' style={{ margin: "35px", marginTop: "90px" }}>News Station - Top {capitalizeFirstLetter(props.category)} Headlines</h1>
       {loading && <Spinner />}
 
       <InfiniteScroll
@@ -80,6 +80,8 @@ const News = (props) => {
                   author={element.author}
                   date={element.publishedAt}
                   source={element.source.name}
+                  toggleMode={props.toggleMode} 
+                  Mode={props.Mode}
                 />
               </div>);
             })}
@@ -90,11 +92,11 @@ const News = (props) => {
   )
 }
 
-News.defaultProps = {
-  country: 'in',
-  pageSize: 8,
-  category: 'general',
-}
+// News.defaultProps = {
+//   country: 'in',
+//   pageSize: 8,
+//   category: 'general',
+// }
 
 News.propTypes = {
   country: PropTypes.string,
