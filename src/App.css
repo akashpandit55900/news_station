@@ -16,6 +16,9 @@
     color: red;
     background-color: #ffcccc;
     border-radius: 20px;
+    border: 1px solid red;
+    padding: 5px;
+    margin-top: 4px;
 }
 
 .navbar-nav .nav-link.active {
@@ -32,4 +35,9 @@
     background-color: #ffcccc;
     font-weight: bold;
     border: 1px solid red;
+}
+
+::selection {
+    background-color: #ffcccc; 
+    color: red;             
 }

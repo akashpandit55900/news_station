@@ -26,7 +26,7 @@ const NavBar = (props) => {
                             </li>
                             <li className="nav-item fw-medium"><Link className={`nav-link ${isActive('/business')}`} to="/business">Business</Link></li>
                             <li className="nav-item fw-medium"><Link className={`nav-link ${isActive('/entertainment')}`} to="/entertainment">Entertainment</Link></li>
-                            <li className="nav-item fw-medium"><Link className={`nav-link ${isActive('/general')}`} to="/general">General</Link></li>
+                            {/* <li className="nav-item fw-medium"><Link className={`nav-link ${isActive('/general')}`} to="/general">General</Link></li> */}
                             <li className="nav-item fw-medium"><Link className={`nav-link ${isActive('/health')}`} to="/health">Health</Link></li>
                             <li className="nav-item fw-medium"><Link className={`nav-link ${isActive('/science')}`} to="/science">Science</Link></li>
                             <li className="nav-item fw-medium"><Link className={`nav-link ${isActive('/sports')}`} to="/sports">Sports</Link></li>
