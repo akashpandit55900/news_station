@@ -23,7 +23,7 @@ const News = (props) => {
   const updateNews = async () => {
     props.setProgress(10);
     setLoading(true);
-    let ModifiedUrl = `${url}country=${props.country}&category=${props.category}&apiKey=${props.apiKey2}&page=${page}&pageSize=${props.pageSize}`; // meriAPI
+    let ModifiedUrl = `${url}country=${props.country}&category=${props.category}&apiKey=${props.apiKey1}&page=${page}&pageSize=${props.pageSize}`; // meriAPI
     
     let data = await fetch(ModifiedUrl);
     props.setProgress(30);
@@ -44,7 +44,7 @@ const News = (props) => {
 
 
   const fetchMoreData = async () => {
-    let ModifiedUrl = `${url}country=${props.country}&category=${props.category}&apiKey=${props.apiKey2}&page=${page+1}&pageSize=${props.pageSize}`; // meriAPI
+    let ModifiedUrl = `${url}country=${props.country}&category=${props.category}&apiKey=${props.apiKey1}&page=${page+1}&pageSize=${props.pageSize}`; // meriAPI
     setPage(page + 1);
     let data = await fetch(ModifiedUrl);
     let parsedData = await data.json();
